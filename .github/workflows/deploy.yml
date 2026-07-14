@@ -19,7 +19,7 @@ jobs:
       - name: Run Tests
         run: |
           cd app
-          pytest -v > ../test_results.txt
+          pytest -v | tee ../test_results.txt
       - name: Run Gemini Approval Gate
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
